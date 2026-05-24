@@ -154,6 +154,41 @@
         50% { transform: translate(30px, 20px) scale(1.05); }
         100% { transform: translate(-20px, 40px) scale(0.95); }
     }
+
+    .main-hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background-image: linear-gradient(rgba(8, 19, 42, 0.75), rgba(8, 19, 42, 0.82)), url("assets/hero-background.jpg");
+      background-size: cover;
+      background-position: center;
+      padding: clamp(2rem, 4vw, 4rem);
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+    }
+    .main-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 34%);
+      gap: clamp(1.5rem, 3vw, 3rem);
+      align-items: end;
+      width: 100%;
+    }
+    .main-hero-person {
+      width: 100%;
+      max-width: 360px;
+      justify-self: center;
+      align-self: end;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.35));
+    }
+    .main-hero-content { max-width: 780px; }
+    @media (max-width: 1024px) {
+      .main-hero { min-height: 0; }
+      .main-hero-grid { grid-template-columns: 1fr; align-items: start; }
+      .main-hero-person { max-width: 260px; }
+    }
+
 </style>
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden antialiased relative min-h-screen selection:bg-sovereign-gold selection:text-background">
@@ -178,22 +213,16 @@
 </header>
 <main class="relative z-10 pt-[140px] md:pt-[200px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <section class="mb-section-gap w-full">
-<div class="container hero-grid">
-<div>
+<div class="main-hero">
+<div class="main-hero-grid">
+<div class="main-hero-content">
 <p class="font-body-base text-body-base text-on-surface-variant">Construcciones de Alto Standing</p>
 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-neon-white mb-6 uppercase">Diseñamos y construimos la casa de sus sueños con calidad premium</h1>
 <p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mb-8">En OPUS Constructora transformamos sus expectativas en realidad. Especialistas en obras de alto standing, garantizamos terminaciones impecables, materiales nobles y un diseño exclusivo para quienes no se conforman con menos.</p>
 <a class="inline-flex items-center justify-center px-8 py-4 bg-neon-white text-surface font-body-md font-bold text-body-md rounded neon-glow-hover transition-all duration-300 uppercase tracking-widest mt-6" href="contacto.html">Solicitar Presupuesto Sin Cargo</a>
 <p class="font-body-base text-body-base text-on-surface-variant">✓ Respuesta en 24hs ✓ Proyectos Llave en Mano</p>
 </div>
-<div class="hero-card">
-<h2 class="font-headline-md text-headline-md text-neon-white mb-4">¿Por qué elegirnos?</h2>
-<ul class="benefit-list">
-<li><strong>Materiales Premium:</strong> Seleccionamos la más alta calidad.</li>
-<li><strong>Diseño Exclusivo:</strong> Arquitectura a medida y de vanguardia.</li>
-<li><strong>Terminaciones Perfectas:</strong> Cuidamos cada milímetro.</li>
-<li><strong>Garantía Total:</strong> Tranquilidad desde el día uno.</li>
-</ul>
+<img alt="Director de OPUS Constructora" class="main-hero-person" src="assets/hero-person.png"/>
 </div>
 </div>
 </section>
